@@ -5,7 +5,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class DollarTest {
+public class MoneyTest {
 
     @Test
     public void testMultiplication() {
