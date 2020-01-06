@@ -1,11 +1,9 @@
 package com.duelist.study;
 
-public abstract class Money {
+public class Money {
 
     protected int amount;
     protected String currency;
-
-    abstract Money times(int multiplier);
 
     static Money dollar(int amount) {
         return new Dollar(amount, "USD");
@@ -24,9 +22,18 @@ public abstract class Money {
         return currency;
     }
 
+    Money times(int multiplier) {
+        return new Money(amount * multiplier, currency);
+    }
+
     @Override
     public boolean equals(Object obj) {
         Money money = (Money) obj;
-        return amount == money.amount && this.getClass() == obj.getClass();
+        return amount == money.amount && this.currency().equals(money.currency());
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
     }
 }
